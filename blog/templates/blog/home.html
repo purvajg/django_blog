@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+  {%for p in posts%}
+  <!-- for loop to print all blogs in database one by one -->
+<article class="media content-section">
+  <!-- <img class= "rounded-circle artcile-img" src="{{ p.author.profile.image.url }}" -->
+  <div class="media-body">
+    <div class="article-metadata">
+      <!-- author,date_posted,title,content ==> these fields are from the
+      models.py file  -->
+      <a class="mr-2" href="#">{{ p.author }}</a>
+      <small class="text-muted">{{ p.date_posted }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ p.title }}</a></h2>
+    <p class="article-content">{{ p.content }}</p>
+  </div>
+</article>
+  {%endfor%}
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "blog/base.html"%}
+{% load crispy_forms_tags %}<!--loading the bootstrap(crispy form)-->
+{% block content %}
+  <div class="content-section">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Join Today</legend>
+         {{ form|crispy }}
+         <!--
+         vertical bar for the form to know that we are using  the filter called crispy
+         for paragraph style display
+         {{ form.as_p }} no longer needed as we are using crispt form-->
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Sign up</button>
+      </div>
+    </form>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+        <!--login is the name given to login.html in the urls.py file of example_project--->
+      </small>
+    </div>
+  </div>
+{% endblock content%}
