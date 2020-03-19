@@ -32,8 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
-    'crispy_forms',#external applocation downloaded to make forms  more relevant
-    #in information display
+    'crispy_forms',
     'django.contrib.admin',
     'blog.apps.BlogConfig',
     'django.contrib.auth',
@@ -41,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stdimage',
 ]
 
 MIDDLEWARE = [
